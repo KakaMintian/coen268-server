@@ -1,8 +1,11 @@
 const functions = require('firebase-functions');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+exports.sendClientReserveCancelNotification = functions.https.onCall((data, response) => {
+    const clientUid = data.clientUid;
+    const businessId = data.businessId;
+    const command = data.command;
+
+    console.log("clientUid: " + clientUid);
+    console.log("businessId : " + businessId);
+    console.log("Command: " + command);
+});
